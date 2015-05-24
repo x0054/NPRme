@@ -1,25 +1,5 @@
 #!/bin/bash
 
-# I created this for personal use, for those times when
-# I would love to listen to NPR Morning Edition in my car
-# when I am out of data or radio range. It happens a lot,
-# living in the High Desert of California and all.
-
-# To use, just place this script in an empty directory on
-# your web server and add it as a cron task. Change the server
-# variable to the http path to the folder where the script
-# lives, and change the nprurl variable if you would like
-# to grab a different program.
-
-# NPR permits you to download MP3s for personal use, so this
-# should not be a violation of their terms of service. However,
-# it’s probably not a good idea to distribute the link to the
-# feed without NPRs permission. In any case, the author of
-# this software does not encourage anyone to do anything that
-# would infringe on NPRs legal rights, and will not be
-# responsible for any violations resulting from use or miss
-# use of this software.
-
 # Script Setup
 nprurl=http://www.npr.org/programs/morning-edition/
 server=http://someserver.com/npr/me
