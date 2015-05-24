@@ -4,6 +4,10 @@
 
 I created this for personal use, for those times when I would love to listen to NPR Morning Edition in my car when I am out of data or radio range. It happens a lot, living in the High Desert of California and all.
 
+## Why BASH
+
+This would have been a lot easier to do in Python, or PHP, or any number of other scripting languages. But I wanted to learn more BASH at the time I wrote this, so here it is. My BASH isn't very good, so there are a bunch of temp files created and deleted at runtime. If you can improve it, please fork and send pull requests.
+
 ## How to Use
 To use, just place this script in an empty directory on your web server and add it as a cron task. Change the __server__ variable to the http path of the folder where the script lives, and change the __nprurl__ variable if you would like to grab a different program.
 
