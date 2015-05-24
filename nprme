@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # Script Setup
-nprurl=http://www.npr.org/programs/morning-edition/
 server=http://someserver.com/npr/me
+nprurl=http://www.npr.org/programs/morning-edition/
+
+# Feed Setup
+feedTitle="NPR Morning Edition"
+feedDescription="NPR Morning Edition Podcast"
 
 # Change to the script's directory
 cd "${0%/*}"
@@ -53,9 +57,9 @@ read -r -d '' HEAD << EOM
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
     <channel>
-        <title>NPR Morning Edition</title>
-        <description>NPR Morning Edition Podcast</description>
-        <link>http://www.npr.org/programs/morning-edition/</link>
+        <title>$feedTitle</title>
+        <description>$feedDescription</description>
+        <link>$nprurl</link>
         <language>en-us</language>
         <itunes:image href="$server/logo.jpg"/>
 EOM
