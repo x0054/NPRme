@@ -17,3 +17,5 @@ I created this for personal use, for those times when I would love to listen to 
 
 ## Legal Stuff
 NPR permits you to download MP3s for personal use. This software downloads the MP3s to your computer, and than transfers them to your Podcast playing device, which isn't much different from you doing the same work manually. So this should not be a violation of their terms of service or fair use rules. However, do __NOT__ distribute the link to the feed or rebroadcast the programs without NPRs permission. All NPR programs are Copyrighted by NPR.
+
+NPRme is released under the MIT License.
