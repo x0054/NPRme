@@ -19,7 +19,7 @@ fi
 # Grab and Parce the NPR Page
 wget $nprurl -O today
 grep "\<input type=\"hidden\" id=\"title" today | sed -e 's/^.*value=\"//g' -e 's/\".*//g' | tail -n +2 > titles
-grep dl=1 today | sed -e 's/^.*href=\"//g' -e 's/?dl=1.*$//g' > links
+grep audio-tool-download today | sed -e 's/^.*href=\"//g' -e 's/?.*$//g' > links
 sed -e 's/^.*\///g' links > urls
 paste titles links urls > program
 rm today titles links urls
@@ -34,6 +34,11 @@ do
 	download=`echo "$data" | cut -f2`
 	url=`echo "$data" | cut -f3`
 	wget -P mp3s/ $download
+	echo "Getting New File"
+	echo "For Story:" $title
+	echo $download
+	echo ""
+	echo ""
 	date=`date -R --date="$count minutes ago"`
 	let count=count+10
 	echo "<item><title>$title</title><enclosure url=\"$server/mp3s/$url\" type=\"audio/mpeg\"/><pubDate>$date</pubDate></item>" >> feed
