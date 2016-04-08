@@ -33,10 +33,12 @@ do
 	title=`echo "$data" | cut -f1`
 	download=`echo "$data" | cut -f2`
 	url=`echo "$data" | cut -f3`
-	wget -P mp3s/ $download
-	date=`date -R --date="$count minutes ago"`
-	let count=count+10
-	echo "<item><title>$title</title><enclosure url=\"$server/mp3s/$url\" type=\"audio/mpeg\"/><pubDate>$date</pubDate></item>" >> feed
+	if [ ! -e "mp3s/${download##*/}" ]; then
+		wget -P mp3s/ $download
+		date=`date -R --date="$count minutes ago"`
+		let count=count+10
+		echo "<item><title>$title</title><enclosure url=\"$server/mp3s/$url\" type=\"audio/mpeg\"/><pubDate>$date</pubDate></item>" >> feed
+	fi
 done < program
 rm program
 
