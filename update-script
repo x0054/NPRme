@@ -1,2 +1,10 @@
 #!/bin/bash
+
+# Change to the script's directory
+cd "${0%/*}"
+
+# Pull the Newest Copy of the Script from the GitHub Repo
 wget https://raw.githubusercontent.com/x0054/NPRme/master/nprme -O nprme
+
+# Set Permissions
+chmod 755 nprme
