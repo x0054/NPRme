@@ -1,15 +1,10 @@
 #!/bin/bash
 
-# Script Setup
-server=http://someserver.com/npr/me
-nprurl=http://www.npr.org/programs/morning-edition/
-
-# Feed Setup
-feedTitle="NPR Morning Edition"
-feedDescription="NPR Morning Edition Podcast"
-
 # Change to the script's directory
 cd "${0%/*}"
+
+# Import the Settings
+source settings
 
 # Check if MP3s' Directory Exists, create if does not
 if [ ! -d mp3s ]; then
@@ -18,7 +13,7 @@ fi
 
 # Grab and Parce the NPR Page
 wget $nprurl -O today
-grep "\<input type=\"hidden\" id=\"title" today | sed -e 's/^.*value=\"//g' -e 's/\".*//g' | tail -n +2 > titles
+grep "audio-module-title" today | sed -e 's/^.*audio-module-title\">//g' -e 's/<\/b>.*//g' > titles
 grep audio-tool-download today | sed -e 's/^.*href=\"//g' -e 's/?.*$//g' > links
 sed -e 's/^.*\///g' links > urls
 paste titles links urls > program

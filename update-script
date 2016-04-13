@@ -1,0 +1,2 @@
+#!/bin/bash
+wget https://raw.githubusercontent.com/x0054/NPRme/master/nprme -O nprme
