@@ -13,7 +13,7 @@ fi
 
 # Grab and Parce the NPR Page
 wget $nprurl -O today
-grep "audio-module-title" today | sed -e 's/^.*audio-module-title\">//g' -e 's/<\/b>.*//g' > titles
+grep "audio-module-title" today | sed -e 's/^.*audio-module-title\">//g' -e 's/<\/h2>.*//g' > titles
 grep audio-tool-download today | sed -e 's/^.*href=\"//g' -e 's/?.*$//g' > links
 sed -e 's/^.*\///g' links > urls
 paste titles links urls > program
