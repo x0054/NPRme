@@ -75,3 +75,9 @@ EOM
 echo $HEAD > index.html
 cat feed >> index.html
 echo $TAIL >> index.html
+
+# Scrub Special Chars out of the Feed
+sed 's/\&/\&amp\;/g' index.html > clean
+
+rm index.html
+mv clean index.html
